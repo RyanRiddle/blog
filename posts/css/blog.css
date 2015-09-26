@@ -1,0 +1,18 @@
+h1 {
+	/* center the title */
+	width: 450px;
+	margin: auto;
+
+	/* want space above and below to be as tall as font */
+	padding: 1em;
+}
+
+p {
+	/* center the text */
+	width: 450px;
+	margin: auto;
+
+	/* whitespace between paragraphs as tall as text */
+	/* just bottom because don't want too much space betweent text and title */
+	padding-bottom: 1px;
+}

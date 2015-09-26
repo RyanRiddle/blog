@@ -11,8 +11,12 @@
 			~contents
 			(format "\n</%s>\n" '~tag)))
 
-(defn entry [filename ti & rest]
-	(with-open [w (clojure.java.io/writer filename :append false)]
+(defn html-file [name]
+	(format "%s.html" name))
+
+(defn entry [filename ti & body]
+	(with-open 
+		[w (clojure.java.io/writer (html-file filename) :append false)]
 		(.write w
 			(inside html
 				(str
@@ -22,4 +26,4 @@
 						(apply 
 							#'str
 							(cons 
-								(as h1 ti) rest))))))))
+								(as h1 ti) body))))))))
